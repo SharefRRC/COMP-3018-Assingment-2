@@ -1,0 +1,60 @@
+import { Ticket } from "../types/ticket";
+
+export const tickets: Ticket[] = [
+  {
+    id: 1,
+    title: "Update footer copyright year",
+    description: "Footer still shows an outdated year",
+    priority: "low",
+    status: "open",
+    createdAt: "2025-12-14T15:00:00.000Z"
+  },
+  {
+    id: 2,
+    title: "Profile picture upload slow",
+    description: "Uploading profile picture takes too long",
+    priority: "medium",
+    status: "open",
+    createdAt: "2025-12-15T15:00:00.000Z"
+  },
+  {
+    id: 3,
+    title: "Dashboard loading slowly",
+    description: "Dashboard takes 10+ seconds to load",
+    priority: "medium",
+    status: "open",
+    createdAt: "2025-12-11T15:00:00.000Z"
+  },
+  {
+    id: 4,
+    title: "Password reset email delayed",
+    description: "Reset emails taking over 30 minutes",
+    priority: "high",
+    status: "open",
+    createdAt: "2025-12-12T15:00:00.000Z"
+  },
+  {
+    id: 5,
+    title: "Export to PDF not working",
+    description: "PDF export fails silently",
+    priority: "high",
+    status: "open",
+    createdAt: "2025-12-08T15:00:00.000Z"
+  },
+  {
+    id: 6,
+    title: "Login page not loading",
+    description: "Users report blank screen on login",
+    priority: "critical",
+    status: "open",
+    createdAt: "2025-12-11T15:00:00.000Z"
+  },
+  {
+    id: 7,
+    title: "Dark mode toggle broken",
+    description: "Dark mode doesn't persist after refresh",
+    priority: "medium",
+    status: "resolved",
+    createdAt: "2025-12-07T15:00:00.000Z"
+  }
+];
