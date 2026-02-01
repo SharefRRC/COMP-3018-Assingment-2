@@ -11,5 +11,7 @@ app.get("/health", (_req, res) => {
   res.status(200).json({ status: "ok" });
 });
 
+import { ticketsRouter } from "./routes/tickets.routes";
+app.use("/api/v1/tickets", ticketsRouter);
 
 app.use(errorHandler);
