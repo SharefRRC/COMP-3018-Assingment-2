@@ -11,3 +11,25 @@ export function getAllTickets(): Ticket[] {
 export function getTicketById(id: number): Ticket | undefined {
   return tickets.find(t => t.id === id);
 }
+
+function nextId(): number {
+  return tickets.length ? Math.max(...tickets.map(t => t.id)) + 1 : 1;
+}
+
+export function createTicket(input: {
+  title: string;
+  description: string;
+  priority: Priority;
+}): Ticket {
+  const newTicket: Ticket = {
+    id: nextId(),
+    title: input.title,
+    description: input.description,
+    priority: input.priority,
+    status: "open",
+    createdAt: new Date().toISOString()
+  };
+
+  tickets.push(newTicket);
+  return newTicket;
+}
