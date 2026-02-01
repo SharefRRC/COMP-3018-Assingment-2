@@ -33,3 +33,22 @@ export function createTicket(input: {
   tickets.push(newTicket);
   return newTicket;
 }
+
+export function updateTicket(
+  id: number,
+  updates: Partial<Pick<Ticket, "title" | "description" | "priority" | "status">>
+): Ticket | undefined {
+  const ticket = getTicketById(id);
+  if (!ticket) return undefined;
+
+  Object.assign(ticket, updates);
+  return ticket;
+}
+
+export function deleteTicket(id: number): boolean {
+  const idx = tickets.findIndex(t => t.id === id);
+  if (idx === -1) return false;
+
+  tickets.splice(idx, 1);
+  return true;
+}
