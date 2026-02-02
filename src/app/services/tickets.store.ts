@@ -1,5 +1,11 @@
 import { Ticket } from "../types/ticket";
 
+function daysAgo(days: number): string {
+  const d = new Date();
+  d.setDate(d.getDate() - days);
+  return d.toISOString();
+}
+
 export const tickets: Ticket[] = [
   {
     id: 1,
@@ -7,7 +13,7 @@ export const tickets: Ticket[] = [
     description: "Footer still shows an outdated year",
     priority: "low",
     status: "open",
-    createdAt: "2025-12-14T15:00:00.000Z"
+    createdAt: daysAgo(3)
   },
   {
     id: 2,
@@ -15,7 +21,7 @@ export const tickets: Ticket[] = [
     description: "Uploading profile picture takes too long",
     priority: "medium",
     status: "open",
-    createdAt: "2025-12-15T15:00:00.000Z"
+    createdAt: daysAgo(2)
   },
   {
     id: 3,
@@ -23,7 +29,7 @@ export const tickets: Ticket[] = [
     description: "Dashboard takes 10+ seconds to load",
     priority: "medium",
     status: "open",
-    createdAt: "2025-12-11T15:00:00.000Z"
+    createdAt: daysAgo(6)
   },
   {
     id: 4,
@@ -31,7 +37,7 @@ export const tickets: Ticket[] = [
     description: "Reset emails taking over 30 minutes",
     priority: "high",
     status: "open",
-    createdAt: "2025-12-12T15:00:00.000Z"
+    createdAt: daysAgo(5)
   },
   {
     id: 5,
@@ -39,7 +45,7 @@ export const tickets: Ticket[] = [
     description: "PDF export fails silently",
     priority: "high",
     status: "open",
-    createdAt: "2025-12-08T15:00:00.000Z"
+    createdAt: daysAgo(9)
   },
   {
     id: 6,
@@ -47,7 +53,7 @@ export const tickets: Ticket[] = [
     description: "Users report blank screen on login",
     priority: "critical",
     status: "open",
-    createdAt: "2025-12-11T15:00:00.000Z"
+    createdAt: daysAgo(6)
   },
   {
     id: 7,
@@ -55,6 +61,6 @@ export const tickets: Ticket[] = [
     description: "Dark mode doesn't persist after refresh",
     priority: "medium",
     status: "resolved",
-    createdAt: "2025-12-07T15:00:00.000Z"
+    createdAt: daysAgo(10)
   }
 ];

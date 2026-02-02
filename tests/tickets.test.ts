@@ -2,10 +2,10 @@ import request from "supertest";
 import { app } from "../src/app/app";
 
 describe("API basics", () => {
-  test("GET /health", async () => {
-    const res = await request(app).get("/health");
+  test("GET /api/v1/health", async () => {
+    const res = await request(app).get("/api/v1/health");
     expect(res.status).toBe(200);
-    expect(res.body.status).toBe("ok");
+    expect(res.body.status).toBe("OK");
   });
 
   test("GET /api/v1/tickets", async () => {

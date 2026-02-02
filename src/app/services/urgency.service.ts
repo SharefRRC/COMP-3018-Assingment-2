@@ -21,7 +21,7 @@ export function calculateUrgencyScore(ticket: Ticket, ticketAgeDays: number): nu
 
 export function urgencyLevelFromScore(score: number): string {
   if (score >= 80) return "Critical. Immediate attention required.";
-  if (score >= 55) return "High urgency. Prioritize resolution.";
+  if (score >= 50) return "High urgency. Prioritize resolution.";
   if (score >= 30) return "Moderate. Schedule for attention.";
   return "Low urgency. Address when capacity allows.";
 }
